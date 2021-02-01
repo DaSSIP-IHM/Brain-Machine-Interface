@@ -6,6 +6,8 @@ drone.navdata_ready.wait()
 print("initialisation finished")
 
 
+
+
 # fonction à appeler pour faire tourner le drone
 # Le premier nombre est pour faire bouger le drone sur l'axe vertical
 # Le deuxieme nombre est pour faire tourner le drone sur lui-même clockwise ou counter clockwise
@@ -17,16 +19,15 @@ print("initialisation finished")
 #   MoveTheDrone([~, 1, 0]) pour faire tourner le drone counter clockwise
 #   MoveTheDrone([~, ~, 1]) pour faire atterir le drone et arrêter le programme
 def MoveTheDrone(order):
+    speed = 0.1
     # Si order vaut [~, ~, 1] alors on arrête le drone
-    if order[3] == 1:
+    if order[2] == 1:
         Land()
         exit(200)
 
     # Moves the drone
-    drone.move(up=(order[0] if order[0] >= 0 else 0),
-               down=(order[0] if order[0] < 0 else 0),
-               cw=(order[1] if order[1] >= 0 else 0),
-               ccw=(order[1] if order[1] < 0 else 0))
+    drone.move(up=(order[0]*speed if order[0] >= 0 else 0),
+               down=(order[0]*speed if order[0] < 0 else 0))
 
 
 # Take Off Function
