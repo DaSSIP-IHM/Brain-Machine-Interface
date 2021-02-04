@@ -16,7 +16,7 @@ print("initialisation finished")
 #   MoveTheDrone([1, ~, 0]) pour faire monter le drone
 #   MoveTheDrone([-1, ~, 0]) pour faire descendre le drone
 #   MoveTheDrone([~, 1, 0]) pour faire tourner le drone clockwise
-#   MoveTheDrone([~, 1, 0]) pour faire tourner le drone counter clockwise
+#   MoveTheDrone([~, -1, 0]) pour faire tourner le drone counter clockwise
 #   MoveTheDrone([~, ~, 1]) pour faire atterir le drone et arrêter le programme
 def MoveTheDrone(order):
     speed = 0.1
